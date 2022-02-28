@@ -1,3 +1,19 @@
+<?php
+
+// Prepare required parameters:
+$adslotId = 1;
+$external_identifier = "test";
+$user_agent = urlencode($_SERVER['HTTP_USER_AGENT']);
+$ip = $_SERVER['REMOTE_ADDR'];
+
+// Make request:
+$ayetResponse = file_get_contents("https://www.ayetstudios.com/offers/offerwall_api/" . $adslotId . "?external_identifier=" . $external_identifier ."&user_agent=" . $user_agent . "&ip=" . $ip, false, stream_context_create(['http' => ['ignore_errors' => true]]));
+$ayetResponse = json_decode($ayetResponse,true);
+
+// Output response:
+print_r($ayetResponse);
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +21,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MATYStudios - Contacts</title>
+    <title>MATYStudios - Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.png">
     
@@ -161,9 +177,13 @@ function closeNav() {
 }
 </script> 
     
-    <img draggable="false" src="contacts_background.png" alt="" class="contactsBackground">
+    <canvas id="canvas"></canvas>
         
         
-   
+    
+<div class="container1">   
+<span class="text1">MATYStudios</span>
+<span class="text2">OFFICIAL</span>   
+</div>
 </body>
 </html>

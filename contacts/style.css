@@ -225,6 +225,17 @@ header{
     cursor: pointer;
 }
 
+.contactsBackground{
+    cursor: inherit;
+    position: relative;
+    left: 10%;
+    top: -85 px;
+    height: 450px;
+    width: 1100px;
+    opacity: 30%;
+    padding: 0 15px;
+}
+
 .navbar{
     position: relative;
     z-index: 5;
